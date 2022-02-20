@@ -1,0 +1,59 @@
+public class PrimeNo {
+     static int Hcf(int a,int b){
+    if(b==0){
+        return a;
+    }
+   return Hcf(b, (a%b));
+    }
+    static int lcm(int a,int b){
+         return ((a*b)/Hcf(a, b));
+    }
+    
+static void printDevisor(int n){
+         for (int i=1;i<=n;i++)
+         if(n%i==0)
+         System.out.println(i);
+}
+      
+  static void printDivisor(int n){
+      for(int i=1;i<=Math.sqrt(n);i++){
+         if(n%i==0){
+             System.out.print(i);
+                    if ((n/i)!=i){
+                        System.out.print(",");
+                    System.out.print(n/i);}
+                    System.out.println();
+      }
+    }
+  }     
+    static boolean printPrime(int n){
+    for (int i=2;i<n;i++){
+          if(n%i==0){return false;
+        }
+        
+
+
+           
+    }
+    return true;
+}
+
+ 
+
+   public static void main(String args[]){
+       int a=17;
+       int b=36;
+   int c= Hcf(a, b);
+     System.out.println(c); 
+     int d=lcm(a, b);
+     System.out.println(d);
+    printDevisor(a);
+       printDivisor(b);
+      boolean d=printPrime(a);
+      if(d==true){
+          System.out.println("prime");
+      }
+      else System.out.println("not a prime");
+       
+} 
+}
