@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class BinarySearch{
+    static int SearchArray(int arr[],int n, int target){
+        int low=0;
+        int high=n-1;
+    for (int i=0;i<n;i++){
+        int mid=(low +high)/2;
+        if (arr[mid]==target){return mid;}
+        if (arr[mid]<target){
+            low=mid+1;
+        }else{
+            high=mid-1;
+        }
+    }
+    return -1;
+    }
+    
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter size");
+        int size=sc.nextInt();
+       System.out.println("Enter array");
+        
+       int arr[]=new arr[size];
+        for(int i=0;i<size;i++){
+            arr[i]=sc.nextInt();
+        }
+        System.out.println("enter the target");
+        int target=sc.nextInt();
+        int n=arr.length;
+        int result=SearchArray(arr,n,target);
+        System.out.println(result);
+        
+    }
+} 
